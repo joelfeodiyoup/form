@@ -1,0 +1,38 @@
+<h1>Starting a new claim</h1>
+<p><strong>Hi Celine,</strong></p>
+<p (click)="test()">We're sorry to hear about yoru incident. Lodging your claim online will take 15-30 minutes. You can save your progress and come back anytime.</p>
+
+<section>
+  <h2>1. Your policy and contact details</h2>
+    <ul>
+      <li *ngFor="let o of applicant">
+        <strong>{{o.label}}:</strong> {{o.value}}
+      </li>
+    </ul>
+</section>
+
+<section>
+  <h2>2. How Motor claims usually work</h2>
+  <p>Lodge your claim online - this can take 15 or more minutes depending on complexity. The more information you provide upfront, the quicker the claim will progress.</p>
+
+<p>We will send you a claim number via sms and email. This will include next steps relevant to you to act on immediately.</p>
+
+<p>We will confirm your claim within three business days, and depending on the complexity may get in touch to clarify details or request particular information.</p>
+
+<p>
+  Repairers may be required to assess the damage to your vehicle. After we receive futher clarification or documentation, this will be added to the claim.
+</p>
+
+<p>
+  If we need to take particular action from our end, we will update you as soon as this progresses. Complex claims may take longer to resolve.
+</p>
+
+<p>
+  Once adequate information is available to resolove your claim, you will receive applicable next steps.
+</p>
+
+<p>
+  If approved, excess and payouts will be finalised.
+</p>
+</section>
+<app-form-stepper></app-form-stepper>

@@ -9,9 +9,8 @@ import { AbilitiesComponent } from './abilities/abilities.component';
 const routes: Routes = [
   { path: 'Map', component: MapComponent },
   { path: 'Quests', component: QuestsComponent },
-  { path: 'Inventory', component: InventoryComponent },
   { path: 'Abilities', component: AbilitiesComponent },
-]
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -7,24 +7,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  navItems: {label, href}[] = [
+  navItems = [
+    {
+      label: 'css',
+      items: [
+        {
+          label: 'grid',
+          href: 'css/grid'
+        }
+      ]
+    },
   {
-    label: "Map",
-    href: "Map"
+    label: 'Map',
+    href: 'Map',
+    items: [
+      {
+        label: 'stuff',
+        href: 'blah'
+      }
+    ]
   },
   {
-    label: "Quests",
-    href: "Quests"
-  },
-  {
-    label: "Inventory",
-    href: "Inventory"
-  },
-  {
-    label: "Abilities",
-    href: "Abilities"
-  },
-  ]
+    label: 'Form',
+    href: 'Form'
+  }
+  ];
 
   constructor() { }
 

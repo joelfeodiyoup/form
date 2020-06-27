@@ -10,6 +10,8 @@ import { InventoryComponent } from './inventory/inventory.component';
 import { AbilitiesComponent } from './abilities/abilities.component';
 import { BackButtonDisableModule } from './back-button-disable.module';
 
+import { MotorFormModule } from './motor-form/motor-form.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,14 +19,15 @@ import { BackButtonDisableModule } from './back-button-disable.module';
     MapComponent,
     QuestsComponent,
     InventoryComponent,
-    AbilitiesComponent
+    AbilitiesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BackButtonDisableModule.forRoot({
       preserveScrollPosition: true
-    })
+    }),
+    MotorFormModule
   ],
   providers: [],
   bootstrap: [AppComponent]

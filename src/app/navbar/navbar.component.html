@@ -1,3 +1,14 @@
-<ul>
-    <li *ngFor="let navItem of navItems"><a routerLink="{{navItem.href}}">{{navItem.label}}</a></li>
-</ul>
+<nav role="navigation">
+  <ul>
+      <li *ngFor="let navItem of navItems">
+        <ul *ngIf="navItem.items" class="dropdown">
+          <li *ngFor="let subItem of navItem.items">
+            <a routerLink="{{subItem.href}}">{{subItem.label}}</a>
+          </li>
+        </ul>
+        <a routerLink="{{navItem.href}}">{{navItem.label}}</a>
+
+      </li>
+  </ul>
+
+</nav>
