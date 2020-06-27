@@ -11,6 +11,7 @@ import { AbilitiesComponent } from './abilities/abilities.component';
 import { BackButtonDisableModule } from './back-button-disable.module';
 
 import { MotorFormModule } from './motor-form/motor-form.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { MotorFormModule } from './motor-form/motor-form.module';
     BackButtonDisableModule.forRoot({
       preserveScrollPosition: true
     }),
-    MotorFormModule
+    MotorFormModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
