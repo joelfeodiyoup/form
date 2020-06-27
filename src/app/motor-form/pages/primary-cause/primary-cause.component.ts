@@ -7,5 +7,6 @@ import { FormControl } from '@angular/forms';
 })
 export class PrimaryCauseComponent {
   title = 'my-app';
+  value = 'Clear me';
   name = new FormControl('');
 }

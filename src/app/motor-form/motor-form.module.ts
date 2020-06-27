@@ -12,12 +12,14 @@ import { SummaryComponent } from './pages/summary/summary.component';
 import { FormStepperComponent } from './pages/form-stepper/form-stepper.component';
 
 import { MotorFormRoutingModule } from './motor-form-routing.module';
+import { AngularMaterialImportsModule } from '../angular-material-imports.module';
 
 @NgModule({
   imports: [
     ReactiveFormsModule,
     MotorFormRoutingModule,
-    CommonModule
+    CommonModule,
+    AngularMaterialImportsModule
   ],
   declarations: [
     ConfirmationComponent,
