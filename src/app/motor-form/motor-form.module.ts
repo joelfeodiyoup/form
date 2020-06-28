@@ -1,6 +1,7 @@
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { NgModule } from '@angular/core';
 import { ConfirmationComponent } from './pages/confirmation/confirmation.component';
@@ -13,13 +14,18 @@ import { FormStepperComponent } from './pages/form-stepper/form-stepper.componen
 
 import { MotorFormRoutingModule } from './motor-form-routing.module';
 import { AngularMaterialImportsModule } from '../angular-material-imports.module';
+import { SingleVehiclePrimaryCauseComponent } from'./pages/primary-cause/single-vehicle-primary-cause/single-vehicle-primary-cause.component';
+import { TwoVehiclesPrimaryCauseComponent } from './pages/primary-cause/two-vehicles-primary-cause/two-vehicles-primary-cause.component';
+import { MultiplePrimaryCauseComponent } from './pages/primary-cause/multiple-primary-cause/multiple-primary-cause.component';
+import { WindscreenPrimaryCauseComponent } from './pages/primary-cause/windscreen-primary-cause/windscreen-primary-cause.component';
 
 @NgModule({
   imports: [
     ReactiveFormsModule,
     MotorFormRoutingModule,
     CommonModule,
-    AngularMaterialImportsModule
+    AngularMaterialImportsModule,
+    FormsModule
   ],
   declarations: [
     ConfirmationComponent,
@@ -28,7 +34,11 @@ import { AngularMaterialImportsModule } from '../angular-material-imports.module
     OtherPeopleComponent,
     PrimaryCauseComponent,
     SummaryComponent,
-    FormStepperComponent
+    FormStepperComponent,
+    SingleVehiclePrimaryCauseComponent,
+    TwoVehiclesPrimaryCauseComponent,
+    MultiplePrimaryCauseComponent,
+    WindscreenPrimaryCauseComponent
   ]
 })
 export class MotorFormModule {}

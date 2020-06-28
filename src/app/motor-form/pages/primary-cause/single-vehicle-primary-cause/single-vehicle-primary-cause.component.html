@@ -1,0 +1,34 @@
+<form>
+    <mat-form-field>
+        <mat-label>What was the cause of the incident?</mat-label>
+        <mat-select name="primaryCause" [formControl]="primaryCauseControl">
+          <mat-option *ngFor="let primaryCause of primaryCauses" [value]="primaryCause.value">
+            {{primaryCause.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    <mat-form-field *ngIf="showIncidentTypeQuestion">
+        <mat-label>What was the cause of the...?</mat-label>
+        <mat-select name="incidentType" [formControl]="incidentTypeControl">
+          <mat-option *ngFor="let incidentType of filteredIncidentTypes" [value]="incidentType.value">
+            {{incidentType.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    <mat-form-field>
+        <mat-label>Where did this happen?</mat-label>
+        <mat-select name="incidentLocation" [formControl]="incidentLocationControl">
+          <mat-option *ngFor="let incidentLocation of incidentLocations" [value]="incidentLocation.value">
+            {{incidentLocation.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    <mat-form-field>
+        <mat-label>Who was responsible?</mat-label>
+        <mat-select name="responsiblePersons" [formControl]="responsiblePersonsControl">
+          <mat-option *ngFor="let responsiblePerson of filteredResponsiblePersons" [value]="responsiblePerson.value">
+            {{responsiblePerson.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+</form>
