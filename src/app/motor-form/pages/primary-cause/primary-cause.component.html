@@ -12,8 +12,7 @@
       <app-multiple-primary-cause *ngIf="showMultiple"></app-multiple-primary-cause>
       <app-windscreen-primary-cause *ngIf="showWindscreen"></app-windscreen-primary-cause>
 
-      showMultiple: {{showMultiple}}
+      <app-form-stepper></app-form-stepper>
 
-<pre>{{form.value|json}}</pre>
-
-<app-form-stepper></app-form-stepper>
+      <pre>{{form.value|json}}</pre>
+</form>

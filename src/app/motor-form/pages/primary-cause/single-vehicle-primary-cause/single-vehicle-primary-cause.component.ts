@@ -79,7 +79,7 @@ export class SingleVehiclePrimaryCauseComponent {
   incidentTypeControl = new FormControl();
 
   get primaryCause(): string {
-    const primaryCause = this.form.controls.primaryCause.value;
+    const primaryCause = this.primaryCauseControl.value;
     return primaryCause;
   }
   get filteredIncidentTypes(): IncidentType[] {

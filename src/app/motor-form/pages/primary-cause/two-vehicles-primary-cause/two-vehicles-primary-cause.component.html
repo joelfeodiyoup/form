@@ -10,17 +10,8 @@
     <mat-form-field>
         <mat-label>What happened in the...?</mat-label>
         <mat-select name="primaryCause" [formControl]="primaryCauseControl">
-          <mat-option *ngFor="let primaryCause of primaryCauses" [value]="primaryCause.value">
+          <mat-option *ngFor="let primaryCause of filteredPrimaryCause" [value]="primaryCause.value">
             {{primaryCause.viewValue}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-      <!--
-    <mat-form-field *ngIf="showIncidentTypeQuestion">
-        <mat-label>What was the cause of the...?</mat-label>
-        <mat-select name="incidentType" [formControl]="incidentTypeControl">
-          <mat-option *ngFor="let incidentType of filteredIncidentTypes" [value]="incidentType.value">
-            {{incidentType.viewValue}}
           </mat-option>
         </mat-select>
       </mat-form-field>
@@ -31,5 +22,5 @@
             {{responsiblePerson.viewValue}}
           </mat-option>
         </mat-select>
-      </mat-form-field> -->
+      </mat-form-field>
 </form>

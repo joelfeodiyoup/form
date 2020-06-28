@@ -1,1 +1,26 @@
-<p>windscreen</p>
+<mat-radio-group aria-label="Have you already replaced the windscreen?"
+  [formControl]="windscreenAlreadyReplacedControl">
+  <mat-radio-button value="true">Yes</mat-radio-button>
+  <mat-radio-button value="false">No</mat-radio-button>
+</mat-radio-group>
+
+<pre>windscreen: {{windscreenAlreadyReplaced}}</pre>
+<ng-container *ngIf="!windscreenAlreadyReplaced">
+  <p>Please visit O’Brien Vechicle Glass Services to organise your windscreen to be repaired. They will manage your
+    claim and payments with us.</p>
+</ng-container>
+<ng-container *ngIf="windscreenAlreadyReplaced">
+  <mat-form-field>
+    <mat-label>Where did this happen?</mat-label>
+    <mat-select name="incidentLocation" [formControl]="incidentLocationControl">
+      <mat-option *ngFor="let incidentLocation of incidentLocations" [value]="incidentLocation.value">
+        {{incidentLocation.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>What did this cost?</mat-label>
+    <span matPrefix>$ &nbsp;</span>
+    <input type="tel" matInput [formControl]="amountControl">
+  </mat-form-field>
+</ng-container>

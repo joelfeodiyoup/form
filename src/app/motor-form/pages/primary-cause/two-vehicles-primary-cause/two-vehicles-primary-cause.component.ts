@@ -10,6 +10,12 @@ interface PrimaryCause {
   viewValue: string;
   validFor?: any;
 }
+interface ResponsiblePerson {
+  value: string;
+  viewValue: string;
+  validFor?: any[];
+  hideFor?: any[];
+}
 
 @Component({
   selector: 'app-two-vehicles-primary-cause',
@@ -54,16 +60,57 @@ export class TwoVehiclesPrimaryCauseComponent {
     { viewValue: 'Falling load', value: 'PCM-025', validFor: ['RD'] },
     // roundabout
     { viewValue: 'Collision', value: 'PCM-038', validFor: ['RND'] },
-    // transit
-    { viewValue: 'Damage while being transported', value: 'PCM-038', validFor: ['RND'] },
-    // other
+    // intersection with traffic lights
+    { viewValue: 'Collision', value: 'PCM-041', validFor: ['ITL'] },
+    // intersection without traffic lights
+    { viewValue: 'It involved a controlled t-intersection (stop/give-way sign or road markings)', value: 'PCM-039', validFor: ['INTL'] },
+    { viewValue: 'It involved an uncontrolled t-intersection (no signs or road markings)', value: 'PCM-040', validFor: ['INTL'] },
+    { viewValue: 'Turning into oncoming traffic', value: 'PCM-042', validFor: ['INTL'] },
+    { viewValue: 'Both vehicles were turning', value: 'PCM-021', validFor: ['INTL'] },
+    { viewValue: 'Both parties were entering intersection', value: 'PCM-020', validFor: ['INTL'] },
+    // t intersection
+    { viewValue: 'Collision', value: 'PCM-041', validFor: ['TJ'] },
+    // none of these
+    { viewValue: 'Other', value: 'PCM-011', validFor: ['OTH'] },
+  ];
+  responsiblePersons: ResponsiblePerson[] = [
+    { viewValue: 'The driver of my vehicle', value: 'myvehicle', hideFor: ['PCM-009'] },
+    { viewValue: 'Another person was responsible', value: 'othervehicle', hideFor: ['PCM-028', 'PCM-029'] },
   ];
   incidentLocationControl = new FormControl();
   primaryCauseControl = new FormControl();
+  responsiblePersonsControl = new FormControl();
+
+  get incidentLocation(): string {
+    return this.incidentLocationControl.value;
+  }
+  get filteredPrimaryCause(): PrimaryCause[] {
+    if (!this.incidentLocation) {
+      return [];
+    }
+    const filteredPrimaryCause = this.primaryCauses.filter(primaryCause => {
+      return primaryCause.validFor.indexOf(this.incidentLocation) >= 0;
+    });
+    return filteredPrimaryCause;
+  }
+  get primaryCause(): string {
+    return this.primaryCauseControl.value;
+  }
+  get filteredResponsiblePersons(): ResponsiblePerson[] {
+    if (!this.primaryCause) {
+      return [];
+    }
+    const filteredResponsiblePersons = this.responsiblePersons.filter(responsiblePerson => {
+      // return if selected primaryCause isn't on that should make it hidden
+      return responsiblePerson.hideFor.indexOf(this.primaryCause) < 0;
+    });
+    return filteredResponsiblePersons;
+  }
   constructor() {
     this.form = new FormGroup({
       IncidentLocation: this.incidentLocationControl,
-      primaryCause: this.primaryCauseControl
+      primaryCause: this.primaryCauseControl,
+      responsiblePersons: this.responsiblePersonsControl
     });
   }
 }
