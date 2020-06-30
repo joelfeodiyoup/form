@@ -1,13 +1,15 @@
-import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { Component, ViewChild, OnInit, AfterViewInit } from '@angular/core';
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { SingleVehiclePrimaryCauseComponent } from './single-vehicle-primary-cause/single-vehicle-primary-cause.component';
 
 
 @Component({
   selector: 'app-primary-cause',
   templateUrl: './primary-cause.component.html'
 })
-export class PrimaryCauseComponent {
+export class PrimaryCauseComponent implements OnInit {
   form: FormGroup;
+  @ViewChild(SingleVehiclePrimaryCauseComponent, { static: true }) singleVehiclePrimaryCause: SingleVehiclePrimaryCauseComponent;
 
   // not a great name
   claimTypeControl = new FormControl();
@@ -29,9 +31,14 @@ export class PrimaryCauseComponent {
     return showWindscreen;
   }
 
-  constructor() {
-    this.form = new FormGroup({
+  constructor(private fb: FormBuilder) {
+    this.form = this.fb.group({
       claimType: this.claimTypeControl
     });
+  }
+  ngOnInit() {
+  }
+  test() {
+    console.log('something');
   }
 }

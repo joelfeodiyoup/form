@@ -1,4 +1,4 @@
-<form>
+<form [formGroup]="form">
 
     <mat-radio-group aria-label="Which of these best represents your claim?" [formControl]="claimTypeControl">
         <mat-radio-button value="singleVehicle">Single Vehicle</mat-radio-button>
@@ -7,12 +7,13 @@
         <mat-radio-button value="windscreen">Windscreen</mat-radio-button>
       </mat-radio-group>
 
-      <app-single-vehicle-primary-cause *ngIf="showSingleVehicle"></app-single-vehicle-primary-cause>
-      <app-two-vehicles-primary-cause *ngIf="showTwoVehicles"></app-two-vehicles-primary-cause>
+      <app-single-vehicle-primary-cause [parentForm]="form" *ngIf="showSingleVehicle"></app-single-vehicle-primary-cause>
+      <app-two-vehicles-primary-cause [parentForm]="form" *ngIf="showTwoVehicles"></app-two-vehicles-primary-cause>
       <app-multiple-primary-cause *ngIf="showMultiple"></app-multiple-primary-cause>
-      <app-windscreen-primary-cause *ngIf="showWindscreen"></app-windscreen-primary-cause>
+      <app-windscreen-primary-cause [parentForm]="form" *ngIf="showWindscreen"></app-windscreen-primary-cause>
 
       <app-form-stepper></app-form-stepper>
 
       <pre>{{form.value|json}}</pre>
 </form>
+<button (click)="test()">test</button>

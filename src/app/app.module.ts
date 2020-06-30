@@ -12,6 +12,7 @@ import { BackButtonDisableModule } from './back-button-disable.module';
 
 import { MotorFormModule } from './motor-form/motor-form.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DynamicFormModule } from './dynamic-form/dynamic-form.module';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       preserveScrollPosition: true
     }),
     MotorFormModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    DynamicFormModule
   ],
   providers: [],
   bootstrap: [AppComponent]

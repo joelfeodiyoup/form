@@ -18,6 +18,7 @@ import { SingleVehiclePrimaryCauseComponent } from'./pages/primary-cause/single-
 import { TwoVehiclesPrimaryCauseComponent } from './pages/primary-cause/two-vehicles-primary-cause/two-vehicles-primary-cause.component';
 import { MultiplePrimaryCauseComponent } from './pages/primary-cause/multiple-primary-cause/multiple-primary-cause.component';
 import { WindscreenPrimaryCauseComponent } from './pages/primary-cause/windscreen-primary-cause/windscreen-primary-cause.component';
+import { SpyDirective } from './spy.directive';
 
 @NgModule({
   imports: [
@@ -38,7 +39,8 @@ import { WindscreenPrimaryCauseComponent } from './pages/primary-cause/windscree
     SingleVehiclePrimaryCauseComponent,
     TwoVehiclesPrimaryCauseComponent,
     MultiplePrimaryCauseComponent,
-    WindscreenPrimaryCauseComponent
+    WindscreenPrimaryCauseComponent,
+    SpyDirective
   ]
 })
 export class MotorFormModule {}

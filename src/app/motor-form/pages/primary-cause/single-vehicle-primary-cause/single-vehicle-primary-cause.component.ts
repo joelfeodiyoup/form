@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { Component, Input, OnInit, OnDestroy, AfterViewChecked, AfterViewInit, AfterContentInit, AfterContentChecked } from '@angular/core';
+import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 
 interface PrimaryCause {
   value: string;
@@ -27,7 +27,9 @@ interface IncidentType {
   selector: 'app-single-vehicle-primary-cause',
   templateUrl: './single-vehicle-primary-cause.component.html'
 })
-export class SingleVehiclePrimaryCauseComponent {
+export class SingleVehiclePrimaryCauseComponent implements OnInit, OnDestroy {
+  // tslint:disable-next-line:no-input-rename
+  @Input() parentForm: FormGroup;
   form: FormGroup;
   primaryCauses: PrimaryCause[] = [
       {viewValue: 'Damage while parked', value: 'PCM-023'},
@@ -114,12 +116,22 @@ export class SingleVehiclePrimaryCauseComponent {
     return filteredResponsiblePersons;
   }
 
-  constructor() {
-    this.form = new FormGroup({
+  constructor(private fb: FormBuilder) {
+    this.form = this.fb.group({
       primaryCause: this.primaryCauseControl,
       incidentLocation: this.incidentLocationControl,
       responsiblePersons: this.responsiblePersonsControl,
       incidentType: this.incidentTypeControl,
     });
   }
+
+  ngOnInit() {
+    setTimeout(() => {
+    this.parentForm.addControl('singleVehicle', this.form);
+    });
+  }
+  ngOnDestroy() {
+    this.parentForm.removeControl('singleVehicle');
+  }
+
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnDestroy, AfterViewInit, OnInit, AfterContentInit, AfterContentChecked } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
 interface IncidentLocation {
@@ -21,7 +21,8 @@ interface ResponsiblePerson {
   selector: 'app-two-vehicles-primary-cause',
   templateUrl: './two-vehicles-primary-cause.component.html'
 })
-export class TwoVehiclesPrimaryCauseComponent {
+export class TwoVehiclesPrimaryCauseComponent implements OnDestroy, OnInit {
+  @Input() parentForm: FormGroup;
   form: FormGroup;
   incidentLocations: IncidentLocation[] = [
     { viewValue: 'Carpark', value: 'CP' },
@@ -111,6 +112,14 @@ export class TwoVehiclesPrimaryCauseComponent {
       IncidentLocation: this.incidentLocationControl,
       primaryCause: this.primaryCauseControl,
       responsiblePersons: this.responsiblePersonsControl
+    });
+  }
+  ngOnDestroy() {
+    this.parentForm.removeControl('twoVehicles');
+  }
+  ngOnInit() {
+    setTimeout(() => {
+    this.parentForm.addControl('twoVehicles', this.form);
     });
   }
 }

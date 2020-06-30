@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnDestroy, AfterViewInit, OnInit, AfterContentInit, AfterContentChecked } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
 interface IncidentLocation {
@@ -10,14 +10,15 @@ interface IncidentLocation {
   selector: 'app-windscreen-primary-cause',
   templateUrl: './windscreen-primary-cause.component.html'
 })
-export class WindscreenPrimaryCauseComponent {
+export class WindscreenPrimaryCauseComponent implements OnDestroy, OnInit {
+  @Input() parentForm: FormGroup;
+  form: FormGroup;
   incidentLocations: IncidentLocation[] = [
     { viewValue: 'Carpark', value: 'CP' },
     { viewValue: 'Driveway', value: 'DW' },
     { viewValue: 'Road', value: 'RD' },
     { viewValue: 'Other', value: 'OTH' },
   ];
-  form: FormGroup;
   windscreenAlreadyReplacedControl = new FormControl();
   incidentLocationControl = new FormControl();
   amountControl = new FormControl();
@@ -38,5 +39,14 @@ export class WindscreenPrimaryCauseComponent {
   }
   test() {
     console.log('something');
+  }
+  ngOnDestroy() {
+    this.parentForm.removeControl('windscreen');
+  }
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.parentForm.addControl('windscreen', this.form);
+    });
+
   }
 }

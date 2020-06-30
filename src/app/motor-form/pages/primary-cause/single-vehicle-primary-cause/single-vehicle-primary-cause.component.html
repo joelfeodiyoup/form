@@ -1,4 +1,4 @@
-<form>
+<div [formGroup]="form">
     <mat-form-field>
         <mat-label>What was the cause of the incident?</mat-label>
         <mat-select name="primaryCause" [formControl]="primaryCauseControl">
@@ -31,4 +31,4 @@
           </mat-option>
         </mat-select>
       </mat-form-field>
-</form>
+    </div>
