@@ -1,0 +1,28 @@
+:host {
+    --max-content-width: 1200px;
+    --full-width: calc(100vw - 2rem);
+    --content-width: min(var(--full-width), var(--max-content-width));
+    --horizontal-padding: calc((100vw - var(--content-width)) / 2);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    position: relative;
+    --footer-height: 4rem;
+    margin-bottom: var(--footer-height);
+    .navbar, main, .footer {
+        padding: 0 var(--horizontal-padding);
+    }
+    main {
+        margin-top: 2rem;
+        padding-left: var(--horizontal-padding);
+        padding-right: var(--horizontal-padding);
+        margin-bottom: var(--footer-height);
+    }
+    .footer {
+        margin-top: auto;
+        width: 100%;
+        box-sizing: border-box;
+        min-height:4rem;
+    }
+}

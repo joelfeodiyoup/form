@@ -1,0 +1,77 @@
+:host {
+    --bg-color-1: white;
+    --bg-color-2: #58a;
+
+    --color-darker: hsla(0, 0%, 100%, .3);
+
+    --color-1: rgba(200, 0, 0, 0.5);
+    --color-2: #58a;
+    --color-3: yellowgreen;
+}
+ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+.box {
+    --length: 200px;
+    width: var(--length);
+    height: var(--length);
+    border: 2px solid black;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.label {
+    font-size: 2rem;
+    display: inline-block;
+    margin: 0.5rem;
+}
+.pattern-1 {
+    background: var(--bg-color-1);
+    background-image: linear-gradient(90deg,
+             var(--color-1) 50%, transparent 0),
+        linear-gradient(
+            var(--color-1) 50%, transparent 0);
+    background-size: 30px 30px;
+}
+.pattern-2 {
+    background: var(--bg-color-2);
+    background-image:
+        linear-gradient(var(--bg-color-1) 1px, transparent 0),
+        linear-gradient(90deg, var(--bg-color-1) 1px, transparent 0);
+    background-size: 30px 30px;
+}
+.pattern-3 {
+    background: var(--bg-color-2);
+    background-image:
+        linear-gradient(var(--bg-color-1) 2px, transparent 0),
+        linear-gradient(90deg, var(--bg-color-1) 2px, transparent 0),
+        linear-gradient(var(--color-darker) 1px, transparent 0),
+        linear-gradient(90deg, var(--color-darker) 1px, transparent 0);
+    background-size: 75px 75px, 75px 75px,
+        15px 15px, 15px 15px;
+}
+.pattern-4 {
+    background: var(--color-1);
+    background-image: radial-gradient(tan 30%, transparent 0);
+    background-size: 30px 30px;
+}
+.pattern-5 {
+    background: var(--color-1);
+    background-image:
+        radial-gradient(tan 30%, transparent 0),
+        radial-gradient(tan 30%, transparent 0);
+    background-size: 30px 30px;
+    background-position: 0 0, 15px 15px;
+}
+.pattern-6 {
+    background: var(--color-2);
+    background-image:
+        linear-gradient(45deg, var(--color-3) 50%, transparent 0);
+    background-size: 30px 30px;
+}
+.pattern-6 {
+    background: var(--color-2);
+    background-image:
+        linear-gradient(45deg, var(--color-3) 30%, transparent 0);
+    background-size: 30px 30px;
+}

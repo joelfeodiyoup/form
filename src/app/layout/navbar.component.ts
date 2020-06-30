@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
 
   navItems = [
     {
@@ -15,7 +15,15 @@ export class NavbarComponent implements OnInit {
         {
           label: 'grid',
           href: 'css/grid'
-        }
+        },
+        {
+          label: 'background patterns',
+          href: 'css/background-pattern'
+        },
+        {
+          label: 'striped backgrounds',
+          href: 'css/striped-backgrounds'
+        },
       ]
     },
     {
@@ -33,10 +41,5 @@ export class NavbarComponent implements OnInit {
     ]
   }
   ];
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

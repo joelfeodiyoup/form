@@ -2,13 +2,14 @@
   --bg-color: #cc2f2f;
   --bg-color-highlight: #690505;
   
+  background: var(--bg-color);
+  display: block;
   a {
     text-decoration: none;
   }
   nav {
     font-family: monospace;
-    display: inline-block;
-    width: 100vw;
+    display: block;
   }
   
   ul {
@@ -17,7 +18,7 @@
     margin: 0;
     padding-left: 0;
     width: 100%;
-    display: inline-block;
+    display: block;
   }
   
   li {

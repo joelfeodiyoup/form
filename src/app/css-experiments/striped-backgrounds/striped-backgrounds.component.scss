@@ -1,0 +1,82 @@
+:host {
+    --color-1: #fb3;
+    --color-2: #58a;
+    --color-3: yellowgreen;
+    --width: 100%;
+}
+ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+.box {
+    --length: 200px;
+    width: var(--length);
+    height: var(--length);
+    border: 2px solid black;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.label {
+    font-size: 2rem;
+    display: inline-block;
+    margin: 0.5rem;
+}
+.pattern-1 {
+    background: linear-gradient(var(--color-1), var(--color-2));
+}
+.pattern-2 {
+    background: linear-gradient(var(--color-1) 50%, var(--color-2) 50%);
+}
+.pattern-3 {
+    background: linear-gradient(var(--color-1) 30%, var(--color-2) 0);
+    background-size: 100% 30px;
+}
+.pattern-4 {
+    background: linear-gradient(var(--color-1) 50%, var(--color-2) 0);
+    background-size: 100% 30px;
+}
+.pattern-5 {
+    background: linear-gradient(var(--color-1) 33.3%, var(--color-2) 0,
+        var(--color-2) 66.6%, yellowgreen 0);
+    background-size: 100% 45px;
+}
+.pattern-6 {
+    background: linear-gradient(to right,
+        var(--color-1) 50%, var(--color-2) 0);
+    background-size: 100% 30px;
+}
+.pattern-6 {
+    background: linear-gradient(to right,
+        var(--color-1) 50%, var(--color-2) 0);
+    background-size: 30px 100%;
+}
+.pattern-7 {
+    background: linear-gradient(45deg,
+        var(--color-1) 50%, var(--color-2) 0);
+    background-size: 30px 30px;
+}
+// some maths required (not a good method)
+.pattern-8 {
+    background: linear-gradient(45deg,
+        var(--color-1) 25%, var(--color-2) 0,
+        var(--color-2) 50%, var(--color-1) 0,
+        var(--color-1) 75%, var(--color-2) 0);
+    background-size: 42.42px 42.42px;
+}
+.pattern-9 {
+    background: repeating-linear-gradient(60deg,
+     var(--color-1), var(--color-2) 30px);
+}
+.pattern-10 {
+    background: repeating-linear-gradient(60deg,
+     var(--color-1), var(--color-1) 15px,
+     var(--color-2) 0, var(--color-2) 30px,
+     );
+}
+.pattern-11 {
+    background: repeating-linear-gradient(60deg,
+     var(--color-1), var(--color-1) 15px,
+     var(--color-2) 0, var(--color-2) 30px,
+     var(--color-3) 0, var(--color-3) 45px,
+     );
+}

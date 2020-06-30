@@ -1,0 +1,12 @@
+:host {
+    --bg-color: #333333;
+    --color: #ffffff;
+    background-color: var(--bg-color);
+    color: var(--color);
+    display: inline-block;
+    min-height: 4rem;
+    footer {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+}
