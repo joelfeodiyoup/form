@@ -4,10 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { MapComponent } from './map/map.component';
 import { QuestsComponent } from './quests/quests.component';
-import { InventoryComponent } from './inventory/inventory.component';
-import { AbilitiesComponent } from './abilities/abilities.component';
 import { BackButtonDisableModule } from './back-button-disable.module';
 
 import { MotorFormModule } from './motor-form/motor-form.module';
@@ -20,10 +17,7 @@ import { AngularExperimentsModule } from './angular-experiments/angular-experime
   declarations: [
     AppComponent,
     NavbarComponent,
-    MapComponent,
     QuestsComponent,
-    InventoryComponent,
-    AbilitiesComponent,
   ],
   imports: [
     BrowserModule,

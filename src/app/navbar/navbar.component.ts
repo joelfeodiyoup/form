@@ -10,6 +10,7 @@ export class NavbarComponent implements OnInit {
   navItems = [
     {
       label: 'css',
+      href: 'css',
       items: [
         {
           label: 'grid',
@@ -17,19 +18,19 @@ export class NavbarComponent implements OnInit {
         }
       ]
     },
-  {
-    label: 'Map',
-    href: 'Map',
-    items: [
-      {
-        label: 'stuff',
-        href: 'blah'
-      }
-    ]
-  },
+    {
+      label: 'angular',
+      href: 'angular-experiments'
+    },
   {
     label: 'Form',
-    href: 'Form'
+    href: 'Form',
+    items: [
+      {
+        label: 'grid',
+        href: 'css/grid'
+      }
+    ]
   }
   ];
 

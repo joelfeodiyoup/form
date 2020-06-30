@@ -1,59 +1,63 @@
-a {
-  text-decoration: none;
-}
-
-nav {
+:host {
+  --bg-color: #cc2f2f;
+  --bg-color-highlight: #690505;
+  
+  a {
+    text-decoration: none;
+  }
+  nav {
     font-family: monospace;
     display: inline-block;
-}
-
-ul {
-  background: darkorange;
+    width: 100vw;
+  }
+  
+  ul {
+    background: var(--bg-color);
     list-style: none;
     margin: 0;
     padding-left: 0;
-}
-
-li {
+    width: 100%;
+    display: inline-block;
+  }
+  
+  li {
     color: #fff;
-  background: darkorange;
+    background: var(--bg-color);
     display: block;
     float: left;
-    padding: 1rem;
+    padding: 0.5rem 2rem;
     position: relative;
     text-decoration: none;
-  transition-duration: 0.5s;
-}
-
-li a {
-  color: #fff;
-}
-
-li:hover {
-    background: red;
-    cursor: pointer;
-}
-
-ul li ul {
-    background: orange;
-    visibility: hidden;
-  opacity: 0;
-  min-width: 5rem;
-    position: absolute;
-  transition: all 0.5s ease;
-  margin-top: 2rem;
-    left: 0;
-  display: none;
-}
-
-ul li:hover > ul,
-ul li ul:hover {
-  visibility: visible;
-  opacity: 1;
-  display: block;
-}
-
-ul li ul li {
-    clear: both;
-  width: 100%;
+    transition-duration: 0.5s;
+    a {
+      color: #fff;
+    }
+    &:hover {
+      background: var(--bg-color-highlight);
+      cursor: pointer;
+      > ul,
+      ul li ul:hover {
+        visibility: visible;
+        opacity: 1;
+        display: block;
+      }
+  
+    }
+    ul {
+      background: var(--bg-color);
+      visibility: hidden;
+      opacity: 0;
+      min-width: 5rem;
+      position: absolute;
+      transition: all 0.5s ease;
+      left: 0;
+      top: 100%;
+      display: none;
+      li {
+        clear: both;
+        width: 100%;
+      }
+    }
+  }
+  
 }
