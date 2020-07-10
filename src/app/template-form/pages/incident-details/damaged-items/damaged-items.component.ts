@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { ControlContainer, NgModelGroup } from "@angular/forms";
+import { Item } from 'src/app/template-form/services/interfaces';
 
 @Component({
   selector: "damaged-items",
@@ -75,10 +76,4 @@ export class DamagedItemsComponent implements OnInit {
     this.newItem = this.emptyItem;
     this.isEditing = false;
   }
-}
-interface Item {
-  type: string;
-  description: string;
-  replaced: string;
-  amount: string;
 }

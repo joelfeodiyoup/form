@@ -154,7 +154,7 @@ form {
     }
   }
   & .mat-horizontal-content-container {
-    background-color: hsla(240,0%,50%,0.05);
+    // background-color: hsla(240,0%,50%,0.05);
   }
   & .mat-horizontal-stepper-content {
     display: flex;
@@ -201,6 +201,23 @@ strong {
 }
 .float-left {
   float: left;
+}
+.hidden {
+  display:none;
+}
+.form-section {
+  // background-color: hsla(240,0%,50%,0.05);
+  background-color: #f2f2f2;
+  padding: 1rem;
+  margin: 2rem 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+li {
+  line-height: 2;
+}
+h2 {
+  font-weight: 400;
 }
 
 // @import './angular-styles.scss';

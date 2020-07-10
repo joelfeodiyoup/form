@@ -1,5 +1,5 @@
+<div class="form-section">
 <fieldset #form="ngModelGroup" [ngModelGroup]="group" class="column">
-  <!-- hidden -->
   <input hidden [value]="model" name="items" [(ngModel)]="model" />
 </fieldset>
 
@@ -103,3 +103,4 @@
   </div>
 </form>
 <button mat-raised-button *ngIf="!isEditing" (click)="addNewItem()">Add an item or expanse</button>
+</div>

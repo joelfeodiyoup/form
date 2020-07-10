@@ -1,5 +1,7 @@
 <h1>This is what you told us</h1>
 <p class="info">Please go through your claim summary to check that all your information is correct, before you lodge it.</p>
+
+<section class="form-section">
 <h2>Primary cause and incident type</h2>
 <ul>
     <li>
@@ -15,7 +17,9 @@
     <strong>Where did this happen?</strong>{{primaryCause.incidentLocation}}
     </li>
 </ul>
+</section>
 
+<section class="form-section">
 <h2>Incident details</h2>
 <ul>
     <li>
@@ -27,6 +31,7 @@
         {{incidentDetails.incidentTime}}
     </li>
 </ul>
+</section>
 
 <p class="info">Please call us on 08 8888 8888 if you want to update this information.</p>
 <button (click)="test()">test this fellow</button>

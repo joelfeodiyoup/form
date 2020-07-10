@@ -9,4 +9,9 @@ import { FormService } from '../../services/form.service';
 })
 export class AddressComponent {
     @Input() group: string;
+    model = {
+        manuallyEntered: false,
+        line1:'',
+        line2:''
+    }
 }

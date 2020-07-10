@@ -11,10 +11,8 @@ import { MatHorizontalStepper } from '@angular/material/stepper';
         display: flex;
     }
     .stepper-buttons {
-        padding-top:2rem;
-        margin-top: auto;
-        float: right;
-        align-self: flex-end;
+        display: flex;
+        justify-content: flex-end;
     }
     mat-step {
         display: flex;

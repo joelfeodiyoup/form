@@ -12,3 +12,7 @@ export class PersonComponent implements OnInit {
   };
   ngOnInit() {}
 }
+interface Person {
+    NameFor: string,
+    
+}

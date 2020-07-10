@@ -14,7 +14,6 @@ import { WindscreenPrimaryCauseComponent } from './pages/primary-cause/windscree
 import { IncidentDetailsComponent } from './pages/incident-details/incident-details.component';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { DatetimeComponent } from './shared-inputs/datetime/datetime.component';
-import { OtherPeopleComponent } from './pages/other-people/other-people.component';
 import { GstComponent } from './shared-inputs/gst/gst.component';
 import { GettingStartedComponent } from './pages/getting-started/getting-started.component';
 import { SaveComponent } from './shared-inputs/save/save.component';
@@ -23,6 +22,8 @@ import { TheftComponent } from './pages/incident-details/theft/theft.component';
 import { PersonComponent } from './shared-inputs/person/person.component';
 import { DateTimePlaceComponent } from './pages/incident-details/date-time-place/date-time-place.component';
 import { DamagedItemsComponent } from './pages/incident-details/damaged-items/damaged-items.component';
+import { PeopleInvolvedComponent } from './pages/people-involved/people-involved.component';
+import { OtherPeopleComponent } from './pages/people-involved/other-people/other-people.component';
 
 @NgModule({
     imports: [
@@ -43,7 +44,7 @@ import { DamagedItemsComponent } from './pages/incident-details/damaged-items/da
         WindscreenPrimaryCauseComponent,
         IncidentDetailsComponent,
         DatetimeComponent,
-        OtherPeopleComponent,
+        PeopleInvolvedComponent,
         GstComponent,
         GettingStartedComponent,
         SaveComponent,
@@ -51,7 +52,8 @@ import { DamagedItemsComponent } from './pages/incident-details/damaged-items/da
         TheftComponent,
         PersonComponent,
         DateTimePlaceComponent,
-        DamagedItemsComponent
+        DamagedItemsComponent,
+        OtherPeopleComponent
     ],
 })
 export class TemplateFormModule {}

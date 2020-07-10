@@ -7,7 +7,7 @@
     <mat-step [completed]="canProceed('')">
       <ng-template matStepLabel>Starting a new claim</ng-template>
       <getting-started></getting-started>
-      <div class="stepper-buttons">
+      <div class="stepper-buttons form-section">
         <button type="button"
         mat-raised-button color="primary"
         matStepperNext>
@@ -18,7 +18,7 @@
     <mat-step [completed]="canProceed('primaryCause')">
       <ng-template matStepLabel>Primary cause and incident details</ng-template>
       <page-primary-cause group="primaryCause"></page-primary-cause>
-      <div class="stepper-buttons">
+      <div class="stepper-buttons form-section">
         <button type="button" mat-button matStepperPrevious>Back</button>
         <button
           mat-raised-button
@@ -34,7 +34,7 @@
     <mat-step [completed]="canProceed('incidentDetails')">
       <ng-template matStepLabel>Incident Details</ng-template>
       <incident-details group="incidentDetails"></incident-details>
-      <div class="stepper-buttons">
+      <div class="stepper-buttons form-section">
         <button type="button" mat-button matStepperPrevious>Back</button>
         <button
         mat-raised-button
@@ -48,8 +48,8 @@
       <ng-template matStepLabel
         >Police reports and other people involved</ng-template
       >
-      <other-people></other-people>
-      <div class="stepper-buttons">
+      <people-involved></people-involved>
+      <div class="stepper-buttons form-section">
         <button type="button" mat-button matStepperPrevious>Back</button>
         <button
           mat-raised-button
@@ -64,7 +64,7 @@
     <mat-step>
       <ng-template matStepLabel>Summary to check</ng-template>
       <summary [form]="form"></summary>
-      <div class="stepper-buttons">
+      <div class="stepper-buttons form-section">
         <button type="button" mat-button matStepperPrevious>Back</button>
         <button
           mat-raised-button
