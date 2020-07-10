@@ -1,15 +1,5 @@
 <fieldset [ngModelGroup]="group" class="column">
-    <h1>Incident details</h1>
-  <datetime></datetime>
-  <address group="address"></address>
-  <!-- text area -->
-  <label>Was your insurance policy used for business purposes?</label>
-  <mat-button-toggle-group
-    name="taxStatus"
-    [(ngModel)]="model.taxStatus"
-    aria-label="Was your insurance policy used for business purposes?">
-    <mat-button-toggle value="true">Yes</mat-button-toggle>
-    <mat-button-toggle value="false">No</mat-button-toggle>
-  </mat-button-toggle-group>
-  <gst></gst>
+<h1>Incident details</h1>
+  <date-time-place group="date-time-place"></date-time-place>
+  <theft group="theft"></theft>
 </fieldset>

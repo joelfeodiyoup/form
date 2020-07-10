@@ -19,6 +19,9 @@ import { GstComponent } from './shared-inputs/gst/gst.component';
 import { GettingStartedComponent } from './pages/getting-started/getting-started.component';
 import { SaveComponent } from './shared-inputs/save/save.component';
 import { SummaryComponent } from './pages/summary/summary.component';
+import { TheftComponent } from './pages/incident-details/theft/theft.component';
+import { PersonComponent } from './shared-inputs/person/person.component';
+import { DateTimePlaceComponent } from './pages/incident-details/date-time-place/date-time-place.component';
 
 @NgModule({
     imports: [
@@ -43,7 +46,10 @@ import { SummaryComponent } from './pages/summary/summary.component';
         GstComponent,
         GettingStartedComponent,
         SaveComponent,
-        SummaryComponent
+        SummaryComponent,
+        TheftComponent,
+        PersonComponent,
+        DateTimePlaceComponent
     ],
 })
 export class TemplateFormModule {}
