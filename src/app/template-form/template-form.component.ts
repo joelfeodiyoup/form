@@ -31,7 +31,7 @@ export class TemplateFormComponent implements OnInit, AfterViewInit {
     @ViewChild('form') public form: NgForm;
     @ViewChild('stepper') public stepper: MatHorizontalStepper;
     model;
-    isLinear = false;
+    isLinear = true;
     constructor(
         private formService: FormService
     ) {
