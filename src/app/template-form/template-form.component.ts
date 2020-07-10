@@ -88,6 +88,8 @@ export class TemplateFormComponent implements OnInit, AfterViewInit {
         if (!this.stepper) {
             return 0;
         }
-        return this.stepper.selectedIndex / (this.stepper.steps.length - 1) * 100;
+        // subtract confirmation page and summary page
+        const nFormPages = this.stepper.steps.length - 2;
+        return this.stepper.selectedIndex / nFormPages * 100;
     }
 }

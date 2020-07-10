@@ -1,0 +1,90 @@
+<fieldset [ngModelGroup]="group" class="column form-section">
+  <h2>Police report</h2>
+
+  <label>Did police attend the incident?</label>
+  <mat-button-toggle-group
+    name="policeAttended"
+    aria-label="Did police attend the incident?"
+    [(ngModel)]="model.policeAttended"
+    required
+  >
+    <mat-button-toggle value="true">Yes</mat-button-toggle>
+    <mat-button-toggle value="false">No</mat-button-toggle>
+  </mat-button-toggle-group>
+
+  <ng-container *ngIf="model.policeAttended === 'true'">
+    <label>Was a breath test conducted?</label>
+    <mat-button-toggle-group
+      name="breathTestConducted"
+      aria-label="Was a breath test conducted?"
+      [(ngModel)]="model.breathTestConducted"
+      required
+    >
+      <mat-button-toggle value="true">Yes</mat-button-toggle>
+      <mat-button-toggle value="false">No</mat-button-toggle>
+    </mat-button-toggle-group>
+
+    <mat-form-field *ngIf="model.breathTestConducted === 'true'">
+      <mat-label>Breath test results</mat-label>
+      <mat-select name="bloodAlcohol" [(ngModel)]="model.bloodAlcohol" required>
+        <mat-option value="'high'">
+          Equal or greater than 0.05
+        </mat-option>
+        <mat-option value="'low'">
+          Less than 0.05
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <label>Was anyone charged with an offense?</label>
+        <mat-button-toggle-group
+          name="anyoneCharged"
+          aria-label="Was anyone charged with an offense?"
+          [(ngModel)]="model.anyoneCharged"
+          required
+        >
+          <mat-button-toggle value="true">Yes</mat-button-toggle>
+          <mat-button-toggle value="false">No</mat-button-toggle>
+        </mat-button-toggle-group>
+
+        <mat-form-field *ngIf="model.anyoneCharged === 'true'">
+              <mat-label>Who was charged and what are the details of the charge(s)?</mat-label>
+              <textarea
+                  columns="7"
+                type="text"
+                matInput
+                name="chargeDetails"
+                [(ngModel)]="model.chargeDetails"
+                required
+              ></textarea>
+            </mat-form-field>
+
+  </ng-container>
+
+
+
+  <ng-container *ngIf="model.policeAttended === 'false'">
+    <label>Have you reported this incident to police?</label>
+    <mat-button-toggle-group
+      name="hasReported"
+      aria-label="Have you reported this incident to police?"
+      [(ngModel)]="model.hasReported"
+      required
+    >
+      <mat-button-toggle value="true">Yes</mat-button-toggle>
+      <mat-button-toggle value="false">No</mat-button-toggle>
+    </mat-button-toggle-group>
+
+    <mat-form-field *ngIf="model.hasReported === 'true'">
+      <mat-label>Police report number (optional)</mat-label>
+      <input
+        matInput
+        name="reportNumber"
+        [(ngModel)]="model.reportNumber"
+        required
+      />
+    </mat-form-field>
+
+    <p class="info" *ngIf="model.hasReported === 'false'">Police reports are mandatory for incidents involving theft, malicious damage, collisions over $3,000 and arson. Please report your incident asap, and either add in the report number above, or email it to us. An email address will be provided after you lodge your claim. We will need this police report number to process your claim.</p>
+  </ng-container>
+</fieldset>

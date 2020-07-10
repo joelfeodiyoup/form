@@ -153,17 +153,16 @@ form {
       box-sizing: content-box;
     }
   }
-  & .mat-horizontal-content-container {
-    // background-color: hsla(240,0%,50%,0.05);
+  & .mat-step-header {
+    width: 100%;
+    box-sizing: border-box;
   }
   & .mat-horizontal-stepper-content {
     display: flex;
     flex-direction: column;
     height: 100%;
   }
-  .mat-stepper-vertical {
   
-  }
   & .stepper {
     display: flex;
   }

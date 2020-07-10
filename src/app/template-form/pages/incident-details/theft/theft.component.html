@@ -1,21 +1,19 @@
-<fieldset #form="ngModelGroup" [ngModelGroup]="group" class="column form-section">
-    <h2>Theft</h2>
+<fieldset
+  #form="ngModelGroup"
+  [ngModelGroup]="group"
+  class="column form-section"
+>
+  <h2>Theft</h2>
 
-    <mat-form-field>
-            <mat-label>Who last used the vehicle?</mat-label>
-            <mat-select
-              name="driver"
-              [(ngModel)]="model.driver"
-              required
-            >
-              <mat-option
-                *ngFor="let option of driversOptions"
-                [value]="option.value"
-              >
-                {{ option.viewValue }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
+  <mat-form-field>
+    <mat-label>Who last used the vehicle?</mat-label>
+    <mat-select name="driver" [(ngModel)]="model.driver" required>
+      <mat-option *ngFor="let option of driversOptions" [value]="option.value">
+        {{ option.viewValue }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
   <person group="lastUsedVehicle" *ngIf="isUnlistedDriver"></person>
 
   <label>Was the vehicle locked?</label>
@@ -41,18 +39,12 @@
   </mat-button-toggle-group>
 
   <mat-form-field>
-        <mat-label>When was the vehicle recovered?</mat-label>
-        <input
-          matInput
-          [matDatepicker]="picker"
-          ngModel
-          name="date"
-          
-        />
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field>
+    <mat-label>When was the vehicle recovered?</mat-label>
+    <input matInput [matDatepicker]="picker" ngModel name="date" />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
 
-      <label>Where was the vehicle recovered?</label>
-      <address group="recoverLocation"></address>
+  <label>Where was the vehicle recovered?</label>
+  <address group="recoverLocation"></address>
 </fieldset>

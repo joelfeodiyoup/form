@@ -24,6 +24,8 @@ import { DateTimePlaceComponent } from './pages/incident-details/date-time-place
 import { DamagedItemsComponent } from './pages/incident-details/damaged-items/damaged-items.component';
 import { PeopleInvolvedComponent } from './pages/people-involved/people-involved.component';
 import { OtherPeopleComponent } from './pages/people-involved/other-people/other-people.component';
+import { PoliceReportComponent } from './pages/people-involved/police-report/police-report.component';
+import { ConfirmationComponent } from './pages/confirmation/confirmation.component';
 
 @NgModule({
     imports: [
@@ -53,7 +55,9 @@ import { OtherPeopleComponent } from './pages/people-involved/other-people/other
         PersonComponent,
         DateTimePlaceComponent,
         DamagedItemsComponent,
-        OtherPeopleComponent
+        OtherPeopleComponent,
+        PoliceReportComponent,
+        ConfirmationComponent
     ],
 })
 export class TemplateFormModule {}

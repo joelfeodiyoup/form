@@ -1,7 +1,7 @@
 <form #form="ngForm" class="form">
   <div class="save-and-progress">
     <save></save>
-    <!-- <mat-progress-bar mode="determinate" [value]="progress"></mat-progress-bar> -->
+    <mat-progress-bar mode="determinate" [value]="progress"></mat-progress-bar>
   </div>
   <mat-horizontal-stepper class="stepper" [linear]="isLinear" #stepper>
     <mat-step [completed]="canProceed('')">
@@ -75,6 +75,10 @@
           Lodge claim
         </button>
       </div>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Confirmation</ng-template>
+      <confirmation></confirmation>
     </mat-step>
   </mat-horizontal-stepper>
 </form>

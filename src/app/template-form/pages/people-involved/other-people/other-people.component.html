@@ -1,17 +1,19 @@
 <div class="form-section">
+<h2>Other people involved in the incident</h2>
 
-<!-- <fieldset #form="ngModelGroup" [ngModelGroup]="group" class="column">
+<fieldset #form="ngModelGroup" [ngModelGroup]="group" class="column">
   <input hidden [value]="model" name="items" [(ngModel)]="model" />
-</fieldset>
+
+
 
 <h2>Other people involved in the incident</h2>
 <strong>List all other people involved in the incident</strong>
 <p>
   Please add details for anyone involved in the incident, whether they had their
   vehicle or property damaged, or witnessed the incident.
-</p> -->
+</p>
 
-<form #editForm="ngForm" *ngIf="isEditing" class="column edit-item">
+<div *ngIf="isEditing" class="column edit-item">
     <h2>Add an involved person</h2>
 
     <p class="info">We may be able waive your excess if you can provide the name, contact details (phone number, email or home address) and registration number of the third party/parties invloved in your incident.</p>
@@ -50,6 +52,7 @@
             <button mat-raised-button (click)="cancel()">Cancel</button>
             <button mat-raised-button (click)="save()">Save</button>
         </div>
-</form>
-<button mat-raised-button *ngIf="!isEditing" (click)="addNewItem()">Add an item or expanse</button>
+    </div>
+<button mat-raised-button *ngIf="!isEditing" (click)="addNewItem()">Add an involved person</button>
+</fieldset>
 </div>
