@@ -13,6 +13,7 @@ import { DynamicFormModule } from './dynamic-form/dynamic-form.module';
 import { CssExperimentsModule } from './css-experiments/css-experiments.module';
 import { AngularExperimentsModule } from './angular-experiments/angular-experiments.module';
 import { FooterComponent } from './layout/footer.component';
+import { TemplateFormModule } from './template-form/template-form.module';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { FooterComponent } from './layout/footer.component';
     BrowserAnimationsModule,
     DynamicFormModule,
     CssExperimentsModule,
-    AngularExperimentsModule
+    AngularExperimentsModule,
+    TemplateFormModule
   ],
   providers: [],
   bootstrap: [AppComponent]

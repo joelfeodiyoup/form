@@ -1,0 +1,18 @@
+<fieldset #form="ngModelGroup" [ngModelGroup]="group" class="column">
+    <h1>Primary cause and incident type</h1>
+
+    <label>Which of these best represents your claim?</label>
+  <mat-button-toggle-group
+    aria-label="Which of these best represents your claim?"
+    name="claimType"
+    [(ngModel)]="model.claimType">
+    <mat-button-toggle value="singleVehicle">Single Vehicle</mat-button-toggle>
+    <mat-button-toggle value="twoVehicles">Two Vehicles</mat-button-toggle>
+    <mat-button-toggle value="multipleVehicles">Multiple Vehicles</mat-button-toggle>
+    <mat-button-toggle value="windscreen">Windscreen</mat-button-toggle>
+  </mat-button-toggle-group>
+  <single-vehicle-primary-cause *ngIf="isSingle"></single-vehicle-primary-cause>
+  <two-vehicle-primary-cause *ngIf="isTwoVehicles"></two-vehicle-primary-cause>
+  <multiple-vehicle-primary-cause *ngIf="isMultipleVehicles"></multiple-vehicle-primary-cause>
+  <windscreen-primary-cause *ngIf="isWindscreen"></windscreen-primary-cause>
+</fieldset>

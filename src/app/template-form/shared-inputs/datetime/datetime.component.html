@@ -1,0 +1,22 @@
+<fieldset ngModelGroup="datetime" class="column">
+  <mat-form-field>
+    <mat-label>On which date did this happen?</mat-label>
+    <input
+      matInput
+      [matDatepicker]="picker"
+      [(ngModel)]="model.date"
+      name="date"
+      
+    />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <div class="ngx-timepicker-field-example">
+  <ngx-timepicker-field
+    #timePicker
+    name="incidentTime"
+    [(ngModel)]="model.time">
+  </ngx-timepicker-field>
+</div>
+</fieldset>

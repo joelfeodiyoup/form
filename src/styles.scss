@@ -9,11 +9,78 @@
 // Be sure that you only ever include this mixin once!
 @include mat-core();
 
+$mat-raa: (
+    50 : #fffce0,
+    100 : #fff8b3,
+    200 : #fff380,
+    300 : #ffee4d,
+    400 : #ffea26,
+    500 : #ffe600,
+    600 : #ffe300,
+    700 : #ffdf00,
+    800 : #ffdb00,
+    900 : #ffd500,
+    A100 : #ffffff,
+    A200 : #fffdf2,
+    A400 : #fff3bf,
+    A700 : #ffeea6,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+$mat-raa-accent: (
+    50 : #ebebeb,
+    100 : #cccccc,
+    200 : #aaaaaa,
+    300 : #888888,
+    400 : #6f6f6f,
+    500 : #555555,
+    600 : #4e4e4e,
+    700 : #444444,
+    800 : #3b3b3b,
+    900 : #2a2a2a,
+    A100 : #f28989,
+    A200 : #ed5b5b,
+    A400 : #ff1616,
+    A700 : #fc0000,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$my-app-primary: mat-palette($mat-indigo);
-$my-app-accent: mat-palette($mat-pink, A200, A100, A400);
+// $my-app-primary: mat-palette($mat-indigo);
+$my-app-primary: mat-palette($mat-raa);
+$my-app-accent: mat-palette($mat-raa-accent, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
 $my-app-warn: mat-palette($mat-red);
@@ -39,4 +106,88 @@ form {
   flex-direction: column;
 }
 
-@import './styles-reset.scss'
+@import './styles-reset.scss';
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+.bold {
+  font-weight: bold;
+}
+.ngx-timepicker-control__arrows {
+  font: small-caption !important;
+}
+.form {
+  & .mat-stepper-horizontal-line {
+    display: none;
+  }
+  & .mat-horizontal-stepper-header-container {
+    position: relative;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 2rem;
+    padding-bottom: 3rem;
+    height: fit-content;
+    &:before {
+      // z-index: -1;
+      content: '';
+      display: block;
+      position: absolute;
+      top: -10rem;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      border-color: hsla(240,0%,50%,0.1);
+      border-style: solid;
+      border-bottom-width: 1px;
+      border-right-width: 1px;
+      border-left: none;
+      box-sizing: content-box;
+    }
+  }
+  & .mat-horizontal-content-container {
+    background-color: hsla(240,0%,50%,0.05);
+  }
+  & .mat-horizontal-stepper-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .mat-stepper-vertical {
+  
+  }
+  & .stepper {
+    display: flex;
+  }
+}
+mat-button-toggle-group {
+  width: fit-content;
+}
+.ngx-timepicker-control__input {
+  background-color: transparent;
+}
+.mat-button-toggle-standalone.mat-button-toggle-appearance-standard, .mat-button-toggle-group-appearance-standard {
+  min-width: 50%;
+}
+.mat-button-toggle {
+  flex-grow: 1;
+}
+.warning {
+  background-color: hsla(353, 100%, 43%, 0.36078431372549);
+}
+.info {
+  background-color: rgba(2, 125, 180, 0.4);
+}
+.mat-typography p.warning, p.info {
+  border-radius: 1rem;
+  padding: 1rem 0.5rem;
+  font-weight: 500;
+  font-size: 16px;
+  margin: 1rem 0;
+}
+strong {
+  font-weight: bold;
+}
+
+// @import './angular-styles.scss';

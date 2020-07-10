@@ -32,7 +32,7 @@ export class NavbarComponent {
     },
   {
     label: 'Form',
-    href: 'Form',
+    href: '/template-form',
     items: [
       {
         label: 'grid',

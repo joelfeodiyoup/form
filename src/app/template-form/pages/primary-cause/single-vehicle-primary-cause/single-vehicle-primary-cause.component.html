@@ -1,0 +1,63 @@
+<fieldset #form="ngModelGroup" ngModelGroup="singleVehicle" class="column">
+  <mat-form-field>
+    <mat-label>What was the cause of the incident?</mat-label>
+    <mat-select name="primaryCause"
+        [(ngModel)]="model.primaryCause"
+        (selectionChange)="onFormChange()"
+        required>
+      <mat-option
+        *ngFor="let option of primaryCauses"
+        [value]="option.value"
+      >
+        {{ option.viewValue }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field *ngIf="showIncidentTypeQuestion">
+    <mat-label>What was the cause of the...?</mat-label>
+    <mat-select name="incidentType"
+        [(ngModel)]="model.incidentType"
+        (selectionChange)="onFormChange()"
+        required>
+      <mat-option
+        *ngFor="let option of incidentTypes"
+        [value]="option.value"
+      >
+        {{ option.viewValue }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Where did this happen?</mat-label>
+    <mat-select name="incidentLocation"
+        [(ngModel)]="model.incidentLocation"
+        (selectionChange)="onFormChange()"
+        required
+        >
+      <mat-option
+        *ngFor="let option of incidentLocations"
+        [value]="option.value"
+      >
+        {{ option.viewValue }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Who was responsible?</mat-label>
+    <mat-select
+      name="responsiblePerson"
+      [(ngModel)]="model.responsiblePerson"
+      (selectionChange)="onFormChange()"
+      required
+    >
+      <mat-option
+        *ngFor="let option of responsiblePersons"
+        [value]="option.value"
+      >
+        {{ option.viewValue }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</fieldset>

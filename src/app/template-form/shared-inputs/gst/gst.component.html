@@ -1,0 +1,29 @@
+<fieldset ngModelGroup="gst" class="column">
+  <label>Are you registered for GST?</label>
+  <mat-button-toggle-group name="taxStatus" [(ngModel)]="model.taxStatus" aria-label="tax status">
+    <mat-button-toggle value="true">Yes</mat-button-toggle>
+    <mat-button-toggle value="false">No</mat-button-toggle>
+  </mat-button-toggle-group>
+  <ng-container *ngIf="showTaxStatus">
+    <mat-form-field>
+      <mat-label>What percentage...?</mat-label>
+      <input
+        type="tel"
+        matInput
+        name="taxCreditPercentage"
+        [(ngModel)]="model.taxCreditPercentage"
+        required
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Enter your 11 digit ABN</mat-label>
+      <input
+        type="tel"
+        matInput
+        name="companyNumber"
+        [(ngModel)]="model.companyNumber"
+        required
+      />
+    </mat-form-field>
+  </ng-container>
+</fieldset>

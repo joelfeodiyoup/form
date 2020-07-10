@@ -1,0 +1,84 @@
+<form #form="ngForm" class="form">
+  <div class="save-and-progress">
+    <save></save>
+    <!-- <mat-progress-bar mode="determinate" [value]="progress"></mat-progress-bar> -->
+  </div>
+  <mat-horizontal-stepper class="stepper" [linear]="isLinear" #stepper>
+    <mat-step [completed]="canProceed('')">
+      <ng-template matStepLabel>Starting a new claim</ng-template>
+      <getting-started></getting-started>
+      <div class="stepper-buttons">
+        <button type="button"
+        mat-raised-button color="primary"
+        matStepperNext>
+          Start claim
+        </button>
+      </div>
+    </mat-step>
+    <mat-step [completed]="canProceed('primaryCause')">
+      <ng-template matStepLabel>Primary cause and incident details</ng-template>
+      <page-primary-cause group="primaryCause"></page-primary-cause>
+      <div class="stepper-buttons">
+        <button type="button" mat-button matStepperPrevious>Back</button>
+        <button
+          mat-raised-button
+          color="primary"
+          matStepperNext
+          (click)="validate('primaryCause')"
+          type="button"
+        >
+          Next
+        </button>
+      </div>
+    </mat-step>
+    <mat-step [completed]="canProceed('incidentDetails')">
+      <ng-template matStepLabel>Incident Details</ng-template>
+      <incident-details group="incidentDetails"></incident-details>
+      <div class="stepper-buttons">
+        <button type="button" mat-button matStepperPrevious>Back</button>
+        <button
+        mat-raised-button
+        color="primary" matStepperNext
+        type="button">
+          Next
+        </button>
+      </div>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel
+        >Police reports and other people involved</ng-template
+      >
+      <other-people></other-people>
+      <div class="stepper-buttons">
+        <button type="button" mat-button matStepperPrevious>Back</button>
+        <button
+          mat-raised-button
+          color="primary"
+          matStepperNext
+          type="button"
+        >
+          Next
+        </button>
+      </div>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Summary to check</ng-template>
+      <summary [form]="form"></summary>
+      <div class="stepper-buttons">
+        <button type="button" mat-button matStepperPrevious>Back</button>
+        <button
+          mat-raised-button
+          color="primary"
+          matStepperNext
+          type="button"
+        >
+          Lodge claim
+        </button>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>
+</form>
+<pre>
+    {{form.value|json}}
+</pre>
+<!-- <button (click)="test()">test</button> -->
