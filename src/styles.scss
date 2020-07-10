@@ -112,6 +112,13 @@ form {
   display: flex;
   flex-direction: column;
 }
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.align-right {
+  margin-left: auto;
+}
 .bold {
   font-weight: bold;
 }
@@ -188,6 +195,12 @@ mat-button-toggle-group {
 }
 strong {
   font-weight: bold;
+}
+.float-right {
+  float: right;
+}
+.float-left {
+  float: left;
 }
 
 // @import './angular-styles.scss';

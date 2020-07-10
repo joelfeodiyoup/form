@@ -22,6 +22,7 @@ import { SummaryComponent } from './pages/summary/summary.component';
 import { TheftComponent } from './pages/incident-details/theft/theft.component';
 import { PersonComponent } from './shared-inputs/person/person.component';
 import { DateTimePlaceComponent } from './pages/incident-details/date-time-place/date-time-place.component';
+import { DamagedItemsComponent } from './pages/incident-details/damaged-items/damaged-items.component';
 
 @NgModule({
     imports: [
@@ -49,7 +50,8 @@ import { DateTimePlaceComponent } from './pages/incident-details/date-time-place
         SummaryComponent,
         TheftComponent,
         PersonComponent,
-        DateTimePlaceComponent
+        DateTimePlaceComponent,
+        DamagedItemsComponent
     ],
 })
 export class TemplateFormModule {}
