@@ -6,15 +6,6 @@ import { Item } from 'src/app/template-form/services/interfaces';
   selector: "damaged-items",
   templateUrl: "./damaged-items.component.html",
   viewProviders: [{ provide: ControlContainer, useExisting: NgModelGroup }],
-  styles: [`
-    .edit-item {
-        background-color: white;
-        padding: 1rem;
-        border: 1px solid black;
-        border-radius: 0.25rem;
-    }
-  `
-  ]
 })
 export class DamagedItemsComponent implements OnInit {
   @Input() group: string;

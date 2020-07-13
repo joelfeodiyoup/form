@@ -1,6 +1,7 @@
 <fieldset #form="ngModelGroup" ngModelGroup="singleVehicle" class="column form-section">
-  <mat-form-field>
-    <mat-label>What was the cause of the incident?</mat-label>
+<mat-label>What was the cause of the incident?</mat-label>
+<mat-form-field>
+    <mat-label>Select</mat-label>
     <mat-select name="primaryCause"
         [(ngModel)]="model.primaryCause"
         (selectionChange)="onFormChange()"
@@ -14,8 +15,10 @@
     </mat-select>
   </mat-form-field>
 
-  <mat-form-field *ngIf="showIncidentTypeQuestion">
-    <mat-label>What was the cause of the...?</mat-label>
+  <ng-container  *ngIf="showIncidentTypeQuestion">
+  <mat-label>What was the cause of the incident?</mat-label>
+  <mat-form-field>
+    <mat-label>Select</mat-label>
     <mat-select name="incidentType"
         [(ngModel)]="model.incidentType"
         (selectionChange)="onFormChange()"
@@ -28,9 +31,11 @@
       </mat-option>
     </mat-select>
   </mat-form-field>
+</ng-container>
 
+<mat-label>Where did this happen?</mat-label>
   <mat-form-field>
-    <mat-label>Where did this happen?</mat-label>
+    <mat-label>Select</mat-label>
     <mat-select name="incidentLocation"
         [(ngModel)]="model.incidentLocation"
         (selectionChange)="onFormChange()"
@@ -43,9 +48,10 @@
         {{ option.viewValue }}
       </mat-option>
     </mat-select>
-  </mat-form-field>
+</mat-form-field>
+<mat-label>Who was responsible?</mat-label>
   <mat-form-field>
-    <mat-label>Who was responsible?</mat-label>
+    <mat-label>Select</mat-label>
     <mat-select
       name="responsiblePerson"
       [(ngModel)]="model.responsiblePerson"

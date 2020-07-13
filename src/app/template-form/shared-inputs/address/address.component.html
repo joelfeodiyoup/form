@@ -1,33 +1,33 @@
 <fieldset [ngModelGroup]="group" class="column">
-  <h3>Address</h3>
   <div [class.hidden]="model.manuallyEntered" class="column">
-    <mat-form-field>
-      <mat-label>Address</mat-label>
+      <!-- <mat-label>Enter address</mat-label> -->
+      <mat-form-field>
+            <mat-label>Start typing</mat-label>
       <input matInput type="text" name="line1" ngModel />
     </mat-form-field>
   </div>
   <mat-checkbox name="manuallyEntered" [(ngModel)]="model.manuallyEntered"
     >Enter manually</mat-checkbox
   >
-  <div [class.hidden]="!model.manuallyEntered" class="column">
-    <mat-form-field>
+  <div [class.hidden]="!model.manuallyEntered" class="column edit-item">
       <mat-label>Line 1</mat-label>
+    <mat-form-field>
       <input matInput type="text" name="line1" ngModel />
     </mat-form-field>
+    <mat-label>Line 2</mat-label>
     <mat-form-field>
-      <mat-label>Line 2</mat-label>
       <input matInput type="text" name="line2" ngModel />
     </mat-form-field>
+    <mat-label>Suburb</mat-label>
     <mat-form-field>
-      <mat-label>Suburb</mat-label>
       <input matInput type="text" name="suburb" ngModel />
     </mat-form-field>
+    <mat-label>Postcode</mat-label>
     <mat-form-field>
-      <mat-label>Postcode</mat-label>
       <input matInput type="text" name="postcode" ngModel />
     </mat-form-field>
+    <mat-label>State</mat-label>
     <mat-form-field>
-      <mat-label>State</mat-label>
       <input matInput type="text" name="state" ngModel />
     </mat-form-field>
   </div>

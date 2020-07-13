@@ -1,9 +1,11 @@
 <fieldset #form="ngModelGroup" [ngModelGroup]="group" class="column form-section">
-    <h2>Date, time and place</h2>
+<h2>Date, time and place</h2>
+
   <datetime></datetime>
-  <address group="address"></address>
+  <mat-label>Where did the incident happen?</mat-label>
+  <address group="address" class="form-question"></address>
+  <mat-label>Explain the incident in your own words</mat-label>
   <mat-form-field>
-        <mat-label>Explain the incident in your own words</mat-label>
         <textarea matInput
             type="text"
             name="description"

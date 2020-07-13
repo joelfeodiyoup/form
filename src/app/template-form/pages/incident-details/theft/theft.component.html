@@ -5,8 +5,9 @@
 >
   <h2>Theft</h2>
 
+  <mat-label>Who last used the vehicle?</mat-label>
   <mat-form-field>
-    <mat-label>Who last used the vehicle?</mat-label>
+    <mat-label>Select</mat-label>
     <mat-select name="driver" [(ngModel)]="model.driver" required>
       <mat-option *ngFor="let option of driversOptions" [value]="option.value">
         {{ option.viewValue }}
@@ -14,9 +15,12 @@
     </mat-select>
   </mat-form-field>
 
-  <person group="lastUsedVehicle" *ngIf="isUnlistedDriver"></person>
+  <ng-container *ngIf="isUnlistedDriver">
+      <mat-label>Enter details for unlisted driver</mat-label>
+      <person group="lastUsedVehicle" *ngIf="isUnlistedDriver"></person>
+  </ng-container>
 
-  <label>Was the vehicle locked?</label>
+  <mat-label>Was the vehicle locked?</mat-label>
   <mat-button-toggle-group
     name="locked"
     aria-label="Was the vehicle locked?"
@@ -27,7 +31,7 @@
     <mat-button-toggle value="false">No</mat-button-toggle>
   </mat-button-toggle-group>
 
-  <label>Where the keys in the vehicle?</label>
+  <mat-label>Where the keys in the vehicle?</mat-label>
   <mat-button-toggle-group
     name="keysInVehicle"
     aria-label="Where the keys in the vehicle?"
@@ -38,8 +42,8 @@
     <mat-button-toggle value="false">No</mat-button-toggle>
   </mat-button-toggle-group>
 
+  <mat-label>When was the vehicle recovered?</mat-label>
   <mat-form-field>
-    <mat-label>When was the vehicle recovered?</mat-label>
     <input matInput [matDatepicker]="picker" ngModel name="date" />
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>

@@ -1,5 +1,4 @@
 <div class="form-section">
-<h2>Other people involved in the incident</h2>
 
 <fieldset #form="ngModelGroup" [ngModelGroup]="group" class="column">
   <input hidden [value]="model" name="items" [(ngModel)]="model" />
@@ -30,8 +29,9 @@
       <mat-button-toggle value="witness">Witness</mat-button-toggle>
     </mat-button-toggle-group>
 
+    <mat-label>How would you best describe this person?</mat-label>
     <mat-form-field>
-            <mat-label>How would you best describe this person?</mat-label>
+            <mat-label>Select</mat-label>
             <mat-select
               name="type"
               [(ngModel)]="newItem.type"

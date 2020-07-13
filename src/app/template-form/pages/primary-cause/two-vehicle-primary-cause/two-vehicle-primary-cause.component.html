@@ -1,6 +1,7 @@
 <fieldset ngModelGroup="twoVehicles" class="column form-section">
-  <mat-form-field>
     <mat-label>Where did this happen?</mat-label>
+  <mat-form-field>
+    <mat-label>Select</mat-label>
     <mat-select name="incidentLocation"
         [(ngModel)]="model.incidentLocation"
         (selectionChange)="onFormChange()"
@@ -13,8 +14,9 @@
       </mat-option>
     </mat-select>
   </mat-form-field>
+  <mat-label>What happened in the...?</mat-label>
   <mat-form-field>
-    <mat-label>What happened in the...?</mat-label>
+    <mat-label>Select</mat-label>
     <mat-select name="primaryCause"
         [(ngModel)]="model.primaryCause"
         (selectionChange)="onFormChange()"
@@ -27,8 +29,9 @@
       </mat-option>
     </mat-select>
   </mat-form-field>
+  <mat-label>Who was responsible?</mat-label>
   <mat-form-field>
-    <mat-label>Who was responsible?</mat-label>
+    <mat-label>Select</mat-label>
     <mat-select
       name="responsiblePerson"
       [(ngModel)]="model.responsiblePerson"

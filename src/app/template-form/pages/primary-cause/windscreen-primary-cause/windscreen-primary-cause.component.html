@@ -1,5 +1,5 @@
 <fieldset #form="ngModelGroup" ngModelGroup="windscreen" class="column form-section">
-  <label>Have you already repaired or replaced the windscreen?</label>
+  <mat-label>Have you already repaired or replaced the windscreen?</mat-label>
   <mat-button-toggle-group
     name="taxStatus"
     aria-label="Have you already repaired or replaced the windscreen?"
@@ -18,8 +18,9 @@
     </p>
   </ng-container>
   <ng-container *ngIf="hasBeenRepaired">
+    <mat-label>Where did this happen?</mat-label>
     <mat-form-field>
-      <mat-label>Where did this happen?</mat-label>
+      <mat-label>Select</mat-label>
       <mat-select
         name="incidentLocation"
         [(ngModel)]="model.incidentLocation"
@@ -35,8 +36,9 @@
       </mat-select>
     </mat-form-field>
 
+    <mat-label>What did this cost?</mat-label>
     <mat-form-field>
-      <mat-label>What did this cost?</mat-label>
+      <!-- <mat-label></mat-label> -->
       <span matPrefix>$ &nbsp;</span>
       <input
         type="tel"

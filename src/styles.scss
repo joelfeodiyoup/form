@@ -116,7 +116,7 @@ form {
   display: flex;
   flex-direction: row;
 }
-.align-right {
+.align-right, ngx-material-timepicker-toggle {
   margin-left: auto;
 }
 .bold {
@@ -204,9 +204,10 @@ strong {
 .hidden {
   display:none;
 }
+$section-bg-color: #f2f2f2;
 .form-section {
   // background-color: hsla(240,0%,50%,0.05);
-  background-color: #f2f2f2;
+  background-color: $section-bg-color;
   padding: 1rem;
   margin: 2rem 0;
   width: 100%;
@@ -217,6 +218,29 @@ li {
 }
 h2 {
   font-weight: 400;
+}
+textarea, .mat-form-field-flex, ngx-timepicker-field {
+  background-color: white;
+}
+.mat-button-toggle-group, .form-question {
+  margin-bottom: 1rem;
+}
+.edit-item {
+  $edit-item-color: #ddd;
+  background-color: $edit-item-color;
+  .edit-item {
+    background-color: $section-bg-color;
+    .edit-item {
+      background-color: $edit-item-color;
+      .edit-item {
+        background-color: $section-bg-color;
+      }
+    }
+  }
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
 }
 
 // @import './angular-styles.scss';

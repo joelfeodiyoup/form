@@ -46,8 +46,9 @@
 <form #form="ngForm" *ngIf="isEditing" class="column edit-item">
 
     <h2>Add an item or expense</h2>
+<mat-label>Select the item/expense type</mat-label>
   <mat-form-field>
-        <mat-label>Select the item/expense type</mat-label>
+        <mat-label>Select</mat-label>
         <mat-select
           name="type"
           [(ngModel)]="newItem.type"
@@ -62,8 +63,8 @@
         </mat-select>
       </mat-form-field>
 
-  <mat-form-field>
     <mat-label>description</mat-label>
+  <mat-form-field>
     <textarea
         columns="7"
       type="text"
@@ -74,7 +75,7 @@
     ></textarea>
   </mat-form-field>
 
-  <label>Has repairing or replacement already been paid for?</label>
+  <mat-label>Has repairing or replacement already been paid for?</mat-label>
   <mat-button-toggle-group
     name="replaced"
     aria-label="Has repairing or replacement already been apid for?"
@@ -85,8 +86,8 @@
     <mat-button-toggle value="false">No</mat-button-toggle>
   </mat-button-toggle-group>
 
+  <mat-label>What did this cost?</mat-label>
   <mat-form-field>
-        <mat-label>What did this cost?</mat-label>
         <span matPrefix>$ &nbsp;</span>
         <input
           type="tel"
@@ -102,5 +103,5 @@
       <button mat-raised-button (click)="save()">Save</button>
   </div>
 </form>
-<button mat-raised-button *ngIf="!isEditing" (click)="addNewItem()">Add an item or expanse</button>
+<button mat-raised-button *ngIf="!isEditing" (click)="addNewItem()">Add an item or expense</button>
 </div>
